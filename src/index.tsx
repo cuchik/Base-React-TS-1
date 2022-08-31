@@ -3,10 +3,6 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
-// eslint-disable-next-line no-restricted-imports
-import "bootstrap/dist/css/bootstrap.min.css";
-// eslint-disable-next-line no-restricted-imports
-import "font-awesome/css/font-awesome.min.css";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
