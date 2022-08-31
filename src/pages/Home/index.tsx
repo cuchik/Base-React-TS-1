@@ -11,7 +11,7 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div>Welcome to React App</div>;
+  return <div>Welcome to Home page</div>;
 };
 
 export default Home;
