@@ -49,9 +49,9 @@ export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
 export type AppHandler = {
-  request: (state: RootState) => RootState;
-  success: (state: RootState) => RootState;
-  failure: (state: RootState) => RootState;
+  request: (state: any) => any;
+  success: (state: any) => any;
+  failure: (state: any) => any;
 };
 
 export { store, persistor };

@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import { useActions } from "./selectorData";
+import { useActions, useIndexData } from "./selectorData";
 
 const Home = () => {
-  const { setUser } = useActions();
+  const { login } = useActions();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { loginLoading } = useIndexData();
   useEffect(() => {
-    setUser({
-      email: "luan@mail.com",
-      password: "test123!",
-    });
+    login("luan@mail.com", "test123!");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

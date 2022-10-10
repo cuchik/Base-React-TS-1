@@ -8,4 +8,6 @@ const reducers = {
 
 const combinedReducer = combineReducers<typeof reducers>(reducers);
 
+export type IReducerName = keyof typeof reducers;
+
 export default combinedReducer;

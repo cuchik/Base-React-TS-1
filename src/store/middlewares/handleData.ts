@@ -1,6 +1,6 @@
 import { AnyAction } from "redux";
 
-import { AppHandler, RootState } from "../index";
+import { AppHandler } from "../index";
 
 const LIFECYCLE = {
   REQUEST: "request",
@@ -9,8 +9,8 @@ const LIFECYCLE = {
 };
 
 function safeMap(
-  state: RootState,
-  fn: (state: RootState, action: AnyAction) => RootState,
+  state: any,
+  fn: (state: any, action: AnyAction) => any,
   action: AnyAction
 ) {
   switch (typeof fn) {
@@ -25,7 +25,7 @@ function safeMap(
 }
 
 export const handleData = (
-  state: RootState,
+  state: any,
   action: AnyAction,
   handlers: AppHandler
 ) => {

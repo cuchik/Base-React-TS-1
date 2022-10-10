@@ -1,24 +1,25 @@
 import { Dispatch } from "redux";
+import { apiLogin } from "src/api";
 
 import Types from "../types/auth";
 
-interface User {
-  email?: string;
-  password?: string;
-}
-
-export const setUser = (user: User) => (dispatch: Dispatch) => {
-  dispatch({
-    payload: user,
-    type: Types.SET_USER_DATA,
-    asyncCall: () => {
-      return new Promise((resolve) => {
-        resolve({ status: 1, user });
-      });
-    },
-    onSuccess: () => {},
-  });
-};
+export const login =
+  (email: string, password: string, cb?: any) => (dispatch: Dispatch) => {
+    dispatch({
+      isAsyncCall: true,
+      payload: {},
+      type: Types.LOGIN,
+      asyncCall: () => {
+        return apiLogin(email, password);
+      },
+      onSuccess: (_dispatch: any, response: any) => {
+        if (cb) cb(response);
+      },
+      onFailure: (_dispatch: any, error: any) => {
+        if (cb) cb(false, error);
+      },
+    });
+  };
 
 export const logOutUser = () => (dispatch: Dispatch) => {
   dispatch({
