@@ -35,7 +35,10 @@ const AuthReducer: Reducer = (state = initialState, action) => {
           ...prevState,
           login: {
             loading: false,
-            data: {},
+            // TODO: test for login successfully
+            data: {
+              token: "Test123",
+            },
             error: payload,
           },
         }),

@@ -18,7 +18,7 @@ const logger = createLogger({
 });
 
 const persistConfig = {
-  key: "nts",
+  key: "bpts",
   storage,
   blacklist: [],
 };

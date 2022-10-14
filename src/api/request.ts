@@ -36,7 +36,7 @@ class RequestClass {
         ...config,
       });
       const apiStatus = res.data?.status;
-      return { ...res.data, status: apiStatus === false ? 0 : 1 };
+      return { data: res.data, status: apiStatus === false ? 0 : 1 };
     } catch (error: any) {
       const errorStatus = get(error, "response.status", null);
       const data = get(error, "response.data", null);

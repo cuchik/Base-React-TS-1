@@ -39,7 +39,7 @@ const asyncActionCreator =
             lifecycle: "success",
           },
         });
-        onSuccess(dispatch, response);
+        onSuccess(dispatch, response.data);
       } else {
         dispatch({
           type: `${type}`,
