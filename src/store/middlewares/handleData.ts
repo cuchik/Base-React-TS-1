@@ -1,11 +1,11 @@
-import { AnyAction } from "redux";
+import { AnyAction } from 'redux';
 
-import { AppHandler } from "../index";
+import { AppHandler } from '../index';
 
 const LIFECYCLE = {
-  REQUEST: "request",
-  SUCCESS: "success",
-  FAILURE: "failure",
+  REQUEST: 'request',
+  SUCCESS: 'success',
+  FAILURE: 'failure',
 };
 
 function safeMap(
@@ -14,10 +14,10 @@ function safeMap(
   action: AnyAction
 ) {
   switch (typeof fn) {
-    case "function": {
+    case 'function': {
       return fn(state, action);
     }
-    case "undefined":
+    case 'undefined':
       return state;
     default:
       return state;
@@ -31,7 +31,7 @@ export const handleData = (
 ) => {
   const { meta } = action;
 
-  const lifecycle = meta ? meta["lifecycle"] : null;
+  const lifecycle = meta ? meta['lifecycle'] : null;
 
   if (lifecycle === null) {
     return state;

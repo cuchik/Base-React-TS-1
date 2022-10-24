@@ -2,7 +2,7 @@ const GLOBAL_CACHE = new Set();
 
 export const createTypes = <T extends string>(...types: T[]) => {
   if (types.length === 0) {
-    throw new Error("Must specify at least one type");
+    throw new Error('Must specify at least one type');
   }
 
   const TYPES = {} as { [k in T]: string }; // eslint-disable-line no-unused-vars
@@ -14,7 +14,7 @@ export const createTypes = <T extends string>(...types: T[]) => {
       throw new Error(`${type} has already been defined as an action type`);
     }
 
-    if (typeof type !== "string") {
+    if (typeof type !== 'string') {
       throw new Error(`${type} is of an invalid type, expected string`);
     }
 

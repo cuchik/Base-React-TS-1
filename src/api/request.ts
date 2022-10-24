@@ -1,6 +1,6 @@
-import { AxiosInstance, default as BaseAxios } from "axios";
-import get from "lodash/get";
-import { store } from "src/store";
+import { AxiosInstance, default as BaseAxios } from 'axios';
+import get from 'lodash/get';
+import { store } from 'src/store';
 
 class RequestClass {
   axios: AxiosInstance;
@@ -8,7 +8,7 @@ class RequestClass {
   constructor() {
     this.axios = BaseAxios.create({ timeout: 600000 });
     this.axios.defaults.headers.common = {
-      "X-Requested-With": "XMLHttpRequest",
+      'X-Requested-With': 'XMLHttpRequest',
     };
     this.axios.defaults.withCredentials = true;
   }
@@ -17,13 +17,13 @@ class RequestClass {
     try {
       const serverBaseUrl = process.env.REACT_APP_API_BASE_URL;
       let headers: { [key: string]: string } = {
-        Accept: "application/json",
-        "Content-Type": config?.multipart
-          ? "multipart/form-data"
-          : "application/json",
+        Accept: 'application/json',
+        'Content-Type': config?.multipart
+          ? 'multipart/form-data'
+          : 'application/json',
       };
       const storeData = store.getState();
-      const storedAccessToken = get(storeData, "auth.accessToken", "");
+      const storedAccessToken = get(storeData, 'auth.accessToken', '');
       if (storedAccessToken) {
         headers = {
           ...headers,
@@ -38,8 +38,8 @@ class RequestClass {
       const apiStatus = res.data?.status;
       return { data: res.data, status: apiStatus === false ? 0 : 1 };
     } catch (error: any) {
-      const errorStatus = get(error, "response.status", null);
-      const data = get(error, "response.data", null);
+      const errorStatus = get(error, 'response.status', null);
+      const data = get(error, 'response.data', null);
       return {
         status: 0,
         errorStatus,

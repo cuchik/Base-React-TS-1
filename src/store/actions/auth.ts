@@ -1,7 +1,7 @@
-import { Dispatch } from "redux";
-import { apiLogin } from "src/api";
+import { Dispatch } from 'redux';
+import { apiLogin } from 'src/api';
 
-import Types from "../types/auth";
+import Types from '../types/auth';
 
 export const login =
   (email: string, password: string, cb?: any) => (dispatch: Dispatch) => {

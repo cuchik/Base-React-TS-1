@@ -1,5 +1,5 @@
-import React from "react";
-import classes from "./Auth.module.scss";
+import React from 'react';
+import classes from './Auth.module.scss';
 
 interface Props {
   children: React.ReactNode;

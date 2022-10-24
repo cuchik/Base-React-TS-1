@@ -1,3 +1,3 @@
-import { createTypes } from "./createTypes";
+import { createTypes } from './createTypes';
 
-export default createTypes("LOGIN", "LOG_OUT_USER");
+export default createTypes('LOGIN', 'LOG_OUT_USER');

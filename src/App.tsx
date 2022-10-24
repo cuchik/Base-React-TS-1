@@ -1,22 +1,22 @@
-import React from "react";
-import { Route, Routes } from "react-router";
+import React from 'react';
+import { Route, Routes } from 'react-router';
 // import { Navigate, useLocation } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import AuthLayout from "src/layout/Auth";
-import MainLayout from "src/layout/Main";
-import PublicLayout from "src/layout/Public";
-import { useReducerData } from "src/store/hooks";
-import classes from "./App.module.scss";
-import RoutesList from "./routes";
+import { Navigate } from 'react-router-dom';
+import AuthLayout from 'src/layout/Auth';
+import MainLayout from 'src/layout/Main';
+import PublicLayout from 'src/layout/Public';
+import { useReducerData } from 'src/store/hooks';
+import classes from './App.module.scss';
+import RoutesList from './routes';
 
 const App = () => {
   // const location = useLocation();
-  const isLoggedIn = useReducerData("auth", "login.data.token", "");
+  const isLoggedIn = useReducerData('auth', 'login.data.token', '');
   const renderRoutes = () => {
     const renderRoute = (Component: React.FC, layout: string) => {
       if (Component) {
         switch (layout) {
-          case "private": {
+          case 'private': {
             if (isLoggedIn) {
               return (
                 <MainLayout>
@@ -29,7 +29,7 @@ const App = () => {
               <Navigate to="/login" replace />
             );
           }
-          case "auth": {
+          case 'auth': {
             return (
               <AuthLayout>
                 <Component />

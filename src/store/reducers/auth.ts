@@ -1,8 +1,8 @@
-import { Reducer } from "redux";
+import { Reducer } from 'redux';
 
-import { defaultObj } from "../constants";
-import { handleData } from "../middlewares/handleData";
-import Types from "../types/auth";
+import { defaultObj } from '../constants';
+import { handleData } from '../middlewares/handleData';
+import Types from '../types/auth';
 
 const initialState = {
   login: {
@@ -28,7 +28,7 @@ const AuthReducer: Reducer = (state = initialState, action) => {
           login: {
             loading: false,
             data: payload,
-            error: "",
+            error: '',
           },
         }),
         failure: (prevState) => ({
@@ -37,7 +37,7 @@ const AuthReducer: Reducer = (state = initialState, action) => {
             loading: false,
             // TODO: test for login successfully
             data: {
-              token: "Test123",
+              token: 'Test123',
             },
             error: payload,
           },

@@ -1,5 +1,5 @@
-import { Navigate } from "react-router-dom";
-import { useActions, useIndexData } from "./selectorData";
+import { Navigate } from 'react-router-dom';
+import { useActions, useIndexData } from './selectorData';
 
 const Login = () => {
   const { login } = useActions();
@@ -11,14 +11,14 @@ const Login = () => {
 
   return (
     <div>
-      <p>Login page</p>{" "}
+      <p>Login page</p>{' '}
       <button
         type="button"
         onClick={() => {
-          login("luan@mail.com", "test123!");
+          login('luan@mail.com', 'test123!');
         }}
       >
-        Login{loginLoading && "..."}
+        Login{loginLoading && '...'}
       </button>
     </div>
   );

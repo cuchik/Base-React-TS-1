@@ -1,4 +1,4 @@
-import { AnyAction, Dispatch } from "redux";
+import { AnyAction, Dispatch } from 'redux';
 
 const asyncActionCreator =
   ({ dispatch }: { dispatch: Dispatch }) =>
@@ -16,8 +16,8 @@ const asyncActionCreator =
       return next(action);
     }
 
-    if (typeof asyncCall !== "function") {
-      throw new Error("Expected asyncCall to be a function.");
+    if (typeof asyncCall !== 'function') {
+      throw new Error('Expected asyncCall to be a function.');
     }
 
     try {
@@ -25,7 +25,7 @@ const asyncActionCreator =
         type: `${type}`,
         meta: {
           payload,
-          lifecycle: "request",
+          lifecycle: 'request',
         },
       });
       const response = await asyncCall(dispatch);
@@ -36,7 +36,7 @@ const asyncActionCreator =
           payload: response,
           meta: {
             payload,
-            lifecycle: "success",
+            lifecycle: 'success',
           },
         });
         onSuccess(dispatch, response.data);
@@ -46,7 +46,7 @@ const asyncActionCreator =
           payload: response,
           meta: {
             payload,
-            lifecycle: "failure",
+            lifecycle: 'failure',
           },
         });
         onFailure(dispatch, response);
@@ -58,7 +58,7 @@ const asyncActionCreator =
         payload: error,
         meta: {
           payload,
-          lifecycle: "failure",
+          lifecycle: 'failure',
         },
       });
       onFailure(dispatch, error);
